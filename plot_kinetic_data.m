@@ -1,0 +1,26 @@
+function [] = plot_kinetic_data(time_data , full_binding_data,...
+    association_fit , dissocation_fit , association_start_index , association_end_index,...
+    dissociation_start_index , dissociation_end_index)
+%plot_kinetic_data is a function used to plot fitted kinetic equations with
+%the respective data
+
+figure
+%plotting data
+plot(time_data(1:(dissociation_end_index - association_start_index +1)) ,...
+    full_binding_data(association_start_index:dissociation_end_index) - full_binding_data(association_start_index),...
+    'LineWidth',1);
+hold on
+grid on
+
+%plotting assication fit
+ plot(time_data(1:(association_end_index - association_start_index +1)) ,...
+     association_fit(time_data(1:(association_end_index - association_start_index +1))),...
+     '--black','Linewidth',1)
+
+ %plotting dissociation fit
+ plot(time_data(association_end_index:dissociation_end_index) - time_data(association_start_index) ,...
+     dissocation_fit(time_data(1:(dissociation_end_index - association_end_index +1)) - time_data(dissociation_start_index - association_end_index)),...
+     '--black','Linewidth',1)
+
+ set(gcf , 'Units','Inches','Position',[1,1,9,5.75],'PaperUnits','Inches','PaperSize',[9,5.75])
+end
