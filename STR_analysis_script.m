@@ -3,13 +3,13 @@ clear all
 %% TEST PARAMETERS
 
 %TESTING NANOVNA Code, BSA and antibsa test, 0.01% anti-BSA
-file_location = "CHANGE ME";
+file_location = ".\STR_data_example\";
 num_samps = 1024;
 determine_binding_coeffs = 1;
 drift_correction = 1;
-molar_conc = 1e-6; %concenration of protein in M/L
-index_dissoc_start = 500; index_dissoc_end = 1000; index_assoc_start = 10; index_assoc_end = 400; %These are the data indicies associated with the start of the association and dissociation phases of the protein binding
-drift_correct_index_start = 1; drift_correct_index_end = 10; %these are indicies used to correct for any drift in the response. These should be chosen from a portion of the frequency over time that is somewhat flat
+molar_conc = 667e-9; %concenration of protein in M/L
+index_dissoc_start = 1999; index_dissoc_end = 2224; index_assoc_start = 1778; index_assoc_end = 1923; %These are the data indicies associated with the start of the association and dissociation phases of the protein binding
+drift_correct_index_start = 1; drift_correct_index_end = 110; %these are indicies used to correct for any drift in the response. These should be chosen from a portion of the frequency over time that is somewhat flat
 
 %% Analysis
 files = dir(file_location);
