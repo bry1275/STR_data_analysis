@@ -11,3 +11,8 @@ For determining binding kinetics, the indicies in which the association phase st
 If any drift is noticed and impacts the binding kinetics, the variables "drift_correction_index_start" and "drift_correction_index_end" can be added. These should be found at a point in the test where the solution isn't changed and the drift is relatively linear. This will then correct for the drift when determining the binding kinetics.
 
 Future iterations will constantly read the data and determine resonance frequency.
+
+# Recreate Similar reported Values
+To acquire a 3-sigma LOD similar to that reported in the corresponding paper, the fitting algorithm for finding the zero point should be used to determine the resonance frequency. From here, the standard deviation of the binding curve, using indicies 1-100, should be found to be ~2 kHz. This value, time 3, ends up being slightly lower than what was reported in the paper (6.4 kHz vs. 6 kHz) since a slightly larger and different dataset was used for the paper.
+
+The binding kinetics shown here are from a sample of the BSA/anti-BSA system at a molar concentration of ~667 nM. Using the pre-listed values in the code, a reported value of ~120 nM should be reported, close to the values found in the paper.
